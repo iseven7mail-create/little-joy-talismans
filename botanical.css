@@ -1,0 +1,127 @@
+/* A continuous botanical paper setting, inspired by the original cards. */
+body{overflow-x:clip;background:radial-gradient(ellipse at 20% 10%,#fffaf0aa,transparent 60%),repeating-linear-gradient(98deg,#b9a38104 0 1px,transparent 1px 4px),#f2e7d7}
+.app-shell{position:relative;z-index:1}
+.topbar{position:relative;z-index:3;border-color:#c5b39380}
+.page-botanicals{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.branch{position:absolute;width:clamp(190px,27vw,390px);opacity:.6;filter:saturate(.75)}
+.branch-left{left:-145px;top:20%;transform:rotate(12deg)}
+.branch-right{right:-145px;bottom:-25px;transform:rotate(190deg)}
+body[data-view="home"] .page-botanicals{opacity:0}
+.hero{position:relative;isolation:isolate;display:flex;align-items:center;min-height:clamp(640px,66.666vw,820px);width:100vw;margin-inline:calc(50% - 50vw);padding:100px max(64px,calc((100vw - 1056px)/2)) 120px;gap:0}
+.hero-art{position:absolute;inset:0;z-index:-1;width:100%;max-width:none;height:100%;margin:0;border-radius:0;background:transparent;box-shadow:none;overflow:hidden;mask-image:linear-gradient(#000 87%,transparent 100%)}
+.hero-art img{width:100%;height:100%;aspect-ratio:auto;object-fit:cover;object-position:center}
+.hero-copy{position:relative;width:46%;max-width:500px;padding:22px 0;text-shadow:0 1px 14px #fff7e7}
+.hero-copy::before{content:"";position:absolute;z-index:-1;inset:-25px -18px;background:radial-gradient(ellipse,#f8efdfc9 0%,#f8efdf70 48%,transparent 74%);pointer-events:none}
+.hero h1{font-size:clamp(2.6rem,4.8vw,4.25rem);column-gap:0;line-height:1.35;margin:18px 0 24px}
+.hero .eyebrow{color:#776347;font-size:.8rem}
+.hero-tag{font-size:clamp(1.1rem,1.8vw,1.4rem);color:#5c4b34}
+.hero .lead{max-width:390px;color:#695a45;line-height:1.95}
+.hero .tiny-note{color:#75654c}
+.hero .button-primary{text-shadow:none;margin-top:4px}
+.progress-wrap{position:relative;z-index:1;margin-top:34px;max-width:810px;padding:0 8px}
+.progress{background:#dcccb4;height:5px}
+.progress i{background:linear-gradient(90deg,#aa9167,#637350)}
+.panel{position:relative;isolation:isolate;max-width:880px;padding:46px 48px 48px;margin:24px auto 58px;border:1px solid #c3aa8280;border-radius:22px 4px 22px 4px;background:linear-gradient(125deg,#fffaf0f5,#f5ebdcf7);box-shadow:0 16px 50px #7962460c}
+.panel::after{content:"";position:absolute;inset:7px;border:1px solid #d8c8ad80;border-radius:16px 2px 16px 2px;pointer-events:none;z-index:-1}
+.panel-bloom{position:absolute;right:3px;top:-42px;width:126px;height:126px;pointer-events:none;opacity:.72;z-index:-1;transform:rotate(13deg)}
+.panel-bloom img{width:100%;height:100%;object-fit:contain}
+.panel>.eyebrow{display:flex;align-items:center;gap:12px;color:#897049}
+.panel>.eyebrow::before{content:"❧";font-size:25px;line-height:1;color:#8c9472}
+.panel>h1{color:#51412c;padding-right:18px}
+.panel>.lead{max-width:660px;color:#85745a}
+.card-back{background-image:url('./assets/botanical-blossoms.png'),radial-gradient(ellipse at 50% 35%,#faf5e9,#ddcbb0);background-repeat:no-repeat;background-position:bottom -30px right -35px,center;background-size:80%,cover;border:1px solid #bca681;outline:1px solid #e9ddc8;outline-offset:-8px}
+.card-back::before,.card-back::after{display:none}
+.card-back span,.card-back small{position:relative;z-index:1;text-shadow:0 1px 9px #fffcf5}
+.card-back small{background:#faf3e0b8;border-radius:10px;padding:7px}
+.card-image{border:1px solid #cab99e;box-shadow:0 10px 25px #80634429}
+.context-card,.summary-card,.final-card{background:linear-gradient(120deg,#ede2cf,#f5edde);border:1px solid #d6c3a6;box-shadow:inset 0 0 0 4px #fffaf03b}
+.button-outline{border-color:#bcac8d;background:#fff8e854}
+.button-quiet{border-color:#d9c7a9;background:#efe4d2}
+.chip,.mini-chip{border-color:#d6c4a7;background:#fffbf2}
+.chip.selected,.mini-chip.selected,.focus-card.selected,.suggestion.selected{background:#e2e6d4;border-color:#99a583}
+.story-card{position:relative;background:linear-gradient(115deg,#fffdf6,#f5ecdd);border:1px solid #cbb591;border-radius:3px 20px 3px 20px;padding:34px 32px;box-shadow:0 12px 28px #846d4310;overflow:hidden}
+.story-card::before{content:"";display:block;width:84px;height:5px;border-top:1px solid #ac9061;border-bottom:1px solid #cfbb97;margin:0 auto 26px}
+.story-card h2{font-size:1.65rem;line-height:1.65;margin:18px 0 26px;color:#5c482c}
+.story-section-label{display:block;font-size:.78rem;letter-spacing:.16em;color:#978057;margin-bottom:12px}
+.story-prose{font-size:1rem;line-height:2.05;color:#594b37;overflow-wrap:anywhere}
+.story-prose>p{margin:0 0 20px}
+.story-prose h3{font-family:'Noto Serif TC',serif;font-size:1.22rem;letter-spacing:.06em;margin:8px 0 20px;color:#61704f}
+.story-prose .source-link{font-size:.84rem;margin:0 0 18px;text-underline-offset:4px}
+.story-divider{display:flex;align-items:center;gap:18px;color:#99a17f;font-size:30px;margin:20px 0 16px}
+.story-divider::before,.story-divider::after{content:"";height:1px;flex:1;background:linear-gradient(90deg,transparent,#cdb891)}
+.story-divider::after{transform:rotate(180deg)}
+.story-note{border-top:1px solid #d8c6a7;padding-top:22px;margin-top:24px;font-size:1.05rem;line-height:1.85}
+.story-note strong{color:#81704e}
+.finish-flower{margin:0 auto 10px;height:130px;width:180px}
+.finish-flower img{height:100%;width:100%;object-fit:contain;transform:rotate(35deg)}
+footer{position:relative;padding:26px 0 38px;border-top:1px solid #c5b39380;color:#8c7757}
+footer::before{content:"❧";position:absolute;top:-18px;left:50%;transform:translateX(-50%);background:#f2e7d7;padding:0 14px;color:#909675;font-size:24px}
+dialog{background:linear-gradient(130deg,#fffaf1,#f1e6d5);border:1px solid #c3ad88;box-shadow:0 20px 80px #47351f45}
+.dialog-head{background:#fcf6eb;border-bottom:1px solid #deccb0;padding-bottom:12px}
+@media(min-width:1600px){.hero{min-height:920px}.hero-art img{object-position:center 44%}}
+@media(max-width:760px){
+ .branch{width:225px;opacity:.4}.branch-left{left:-160px;top:15%}.branch-right{right:-150px;bottom:12%}
+ .hero{display:block;min-height:0;padding:44px 26px 0;margin-bottom:24px;overflow:hidden;background:#f3e8d6}
+ .hero-copy{width:100%;max-width:510px;margin:auto;padding:20px 2px 10px;z-index:1}
+ .hero-copy::before{display:none}
+ .hero::before{content:"";position:absolute;right:-70px;top:-50px;width:210px;height:210px;background:url('./assets/botanical-blossoms.png') center/contain no-repeat;opacity:.23;transform:rotate(180deg);pointer-events:none}
+ .hero h1{font-size:clamp(2.45rem,11vw,3.5rem);margin:16px 0 20px}
+ .hero-tag{font-size:1.16rem}.hero .lead{margin-bottom:24px}
+ .hero-art{position:relative;inset:auto;z-index:0;max-width:none;width:calc(100% + 52px);margin:6px -26px 0;height:clamp(330px,78vw,500px);mask-image:linear-gradient(transparent,#000 12%,#000 82%,transparent)}
+ .hero-art img{object-fit:cover;object-position:right center;width:100%;height:100%}
+ .progress-wrap{margin-top:28px}
+ .panel{padding:34px 20px 32px;margin:22px -5px 42px;border-radius:17px 3px 17px 3px}
+ .panel-bloom{width:92px;height:92px;top:-27px;right:-3px;opacity:.55}
+ .panel>h1{font-size:1.75rem;padding-right:0}.panel>.eyebrow{font-size:.67rem}
+ .card-spread{margin-inline:-7px;gap:7px}
+ .card-back{background-size:95%,cover;outline-offset:-5px}.card-back small{padding:3px}
+ .story-card{padding:26px 18px}.story-card h2{font-size:1.35rem}.story-prose{font-size:.96rem;line-height:2}
+ .story-meta{gap:4px}.story-prose>p{margin-bottom:20px}.finish-flower{height:110px}
+ footer{padding-top:25px}
+}
+@media(max-width:390px){.panel{padding-inline:16px}.story-card{padding-inline:14px}.hero{padding-inline:23px}.hero-art{width:calc(100% + 46px);margin-inline:-23px}}
+
+.card-image-button,.summary-card-image,.finish-card-button{border:0;background:transparent;padding:0;color:inherit}
+.card-image-button{display:block;width:100%;border-radius:8px}
+.card-image-button .card-image{display:block}
+.card-image-button:hover .card-image,.summary-card-image:hover img,.finish-card-button:hover img{transform:translateY(-3px);box-shadow:0 16px 30px #80634438}
+.card-image-button img,.summary-card-image img,.finish-card-button img{transition:transform .18s ease,box-shadow .18s ease}
+.draw-continue{justify-content:flex-end}
+.summary-with-card{display:grid;grid-template-columns:minmax(0,1fr) 126px;gap:20px;align-items:center}
+.summary-copy{min-width:0}.summary-copy p{overflow-wrap:anywhere}
+.summary-card-image{width:126px;border-radius:6px;justify-self:end}
+.summary-card-image img{display:block;width:100%;height:auto;border-radius:6px;box-shadow:0 8px 18px #80634424}
+.finish-drawn-cards{margin:30px 0 34px}.finish-drawn-cards .question{margin-bottom:2px}.finish-drawn-cards .muted{margin:0 0 14px}
+.finish-card-grid{display:grid;grid-template-columns:minmax(0,1fr);max-width:250px;margin:0 auto;gap:16px}
+.finish-card-button{display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center;border-radius:8px}
+.finish-card-button img{display:block;width:100%;max-width:230px;height:auto;aspect-ratio:2/3;object-fit:cover;border:1px solid #cab99e;border-radius:6px;box-shadow:0 8px 18px #80634424}
+.finish-card-button span{font-family:'Noto Serif TC',serif;font-size:.95rem}
+.image-dialog{width:min(560px,calc(100vw - 28px));text-align:center}
+.image-dialog .dialog-head{text-align:left}
+.enlarged-card{display:block;max-width:100%;max-height:calc(88vh - 132px);height:auto;width:auto;margin:18px auto 0;border-radius:6px;box-shadow:0 12px 30px #47351f30}
+.image-dialog:has(.card-download) .enlarged-card{max-height:calc(88vh - 205px)}
+.card-download{margin:18px auto 0;text-decoration:none}
+.story-prose .source-link{display:inline-flex;align-items:center;justify-content:center;min-height:46px;padding:9px 20px;border-radius:999px;border:1px solid #606d53;background:#606d53;color:#fff;font-size:.9rem;font-weight:700;text-decoration:none;line-height:1.4;box-shadow:0 7px 18px #4e4b3024}
+.story-prose .source-link:hover{background:#48543e;color:#fff}
+@media(max-width:760px){.summary-with-card{grid-template-columns:minmax(0,1fr) 92px;gap:12px}.summary-card-image{width:92px}.finish-card-grid{gap:8px}.finish-card-button span{font-size:.84rem}}
+
+.final-summary h2{font-size:1.14rem;margin:12px 0 5px;color:#536147}
+.final-summary h2:not(:first-of-type){margin-top:20px;padding-top:16px;border-top:1px solid #d6c3a6}
+.final-summary p{font-size:1rem;line-height:1.85;color:#4b3d2d;overflow-wrap:anywhere}
+.summary-image-section{margin:30px 0 36px;text-align:center}
+.summary-image-section h2{font-family:'Noto Serif TC',serif;font-size:1.3rem;font-weight:500;margin:0 0 4px}
+.summary-image-section>.muted{font-size:.88rem;margin:0 0 16px}
+.summary-image-frame{max-width:480px;margin:0 auto 18px;min-height:240px;padding:10px;background:#efe4d2;border:1px solid #d6c3a6;border-radius:12px}
+.summary-image-frame img{display:block;width:100%;height:auto;border-radius:3px;box-shadow:0 10px 28px #47351f24}
+.summary-image-frame img:not([src]){visibility:hidden}
+.summary-image-section .button{width:min(100%,320px)}
+.summary-image-section .summary-download{color:#fff;text-decoration:none}
+.summary-image-section .summary-download.disabled{opacity:.45;pointer-events:none}
+.summary-image-section #summaryCardStatus{font-size:.82rem;margin:8px 0 0}
+.draw-card .choose-feeling{display:block;width:100%;min-height:44px;margin:8px 0 4px;padding:8px 5px;font-size:.88rem;line-height:1.35}
+.draw-card.selected .card-image{outline:3px solid #657057;outline-offset:3px}
+.draw-card .choose-feeling.selected{background:#657057;border-color:#657057;color:#fff}
+@media(max-width:760px){.draw-card .choose-feeling{font-size:.74rem;padding:7px 3px}}
+
+/* Preserve full 7:12 nurse card artwork. */
+.card-image{aspect-ratio:7/12;object-fit:contain}.card-back{aspect-ratio:7/12}
